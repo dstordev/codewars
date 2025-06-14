@@ -8,11 +8,7 @@
 char *to_weird_case(char *string) {
     for (int i = 0, c = 0; i < (int) strlen(string); i++, c++) {
         const char ch = string[i];
-        if (ch == 0x20) {
-            c = 1;
-            string[i] = ch;
-            continue;
-        }
+        if (ch == 0x20) c = 1;
         if (c & 1) string[i] = (char) tolower(ch);
         else string[i] = (char) toupper(ch);
     }
